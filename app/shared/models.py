@@ -1,0 +1,13 @@
+from django.db import models
+
+
+class TimestampMixin(models.Model):
+    """
+    Abstract base model that provides timestamp fields
+    for tracking creation and modification times.
+    """
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
